@@ -43,6 +43,6 @@ module "lb_attachment" {
 
   instances = var.instances
 
-  load_balancer_arn     = module.lb.arn
+  load_balancer_arn     = module.lb.this_lb_arn
   enable_proxy_protocol = var.enable_proxy_protocol
 }
