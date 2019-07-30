@@ -41,7 +41,7 @@ variable "idle_timeout" {
 }
 
 variable "target_id" {
-  default = list(string)
+  type = list(string)
 }
 
 variable "listener_port" {
