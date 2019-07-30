@@ -40,6 +40,6 @@ module "lb_attachment" {
   target_id = var.target_id
   vpc_id    = var.vpc_id
 
-  load_balancer_arn     = aws_lb.this.arn
+  load_balancer_arn     = module.lb.arn
   enable_proxy_protocol = var.enable_proxy_protocol
 }
