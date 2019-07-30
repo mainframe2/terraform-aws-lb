@@ -73,3 +73,13 @@ variable "enable_proxy_protocol" {
   type    = bool
   default = true
 }
+
+variable "number_of_instances" {
+  type    = number
+  default = 1
+}
+
+variable "instances" {
+  type    = list
+  default = [""]
+}

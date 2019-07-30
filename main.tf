@@ -40,6 +40,10 @@ module "lb_attachment" {
   target_id = var.target_id
   vpc_id    = var.vpc_id
 
+  number_of_instances = var.number_of_instances
+
+  instances = var.instances
+
   load_balancer_arn     = module.lb.arn
   enable_proxy_protocol = var.enable_proxy_protocol
 }
