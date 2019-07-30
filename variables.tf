@@ -40,10 +40,6 @@ variable "idle_timeout" {
   default = 3600
 }
 
-variable "target_id" {
-  type = list(string)
-}
-
 variable "listener_port" {
   type    = number
   default = 443

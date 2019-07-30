@@ -9,10 +9,6 @@ variable "load_balancer_arn" {
   default = ""
 }
 
-variable "target_id" {
-  type = list(string)
-}
-
 variable "listener_port" {
   type    = number
   default = 443
