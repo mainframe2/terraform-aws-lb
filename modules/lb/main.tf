@@ -6,8 +6,6 @@ resource "aws_lb" "this" {
   load_balancer_type = "network"
   subnets            = var.subnets
 
-  security_groups = var.security_groups
-
   # TODO cross_zone_load_balancing  = var.cross_zone_load_balancing
   idle_timeout               = var.idle_timeout
   enable_deletion_protection = var.enable_deletion_protection

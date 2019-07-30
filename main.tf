@@ -7,9 +7,8 @@ module "lb" {
   name        = var.name
   name_prefix = var.name_prefix
 
-  subnets         = var.subnets
-  security_groups = var.security_groups
-  internal        = var.internal
+  subnets  = var.subnets
+  internal = var.internal
 
   # TODO cross_zone_load_balancing  = var.cross_zone_load_balancing
   idle_timeout               = var.idle_timeout
