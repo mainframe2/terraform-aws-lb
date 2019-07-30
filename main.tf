@@ -37,8 +37,7 @@ module "lb_attachment" {
   listener_port     = var.listener_port
   listener_protocol = var.listener_protocol
 
-  target_id = var.target_id
-  vpc_id    = var.vpc_id
+  vpc_id = var.vpc_id
 
   number_of_instances = var.number_of_instances
 
