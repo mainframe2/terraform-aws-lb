@@ -26,16 +26,15 @@ module "lb" {
 # ELB attachment
 #################
 module "lb_attachment" {
-  count  = length(var.listener)
   source = "./modules/lb_attachment"
 
-  name = element(var.listener, count.index)["name"]
+  name = var.name
 
   vpc_id = var.vpc_id
 
   number_of_instances = var.number_of_instances
 
-  listener  = element(var.listener, count.index)
+  listener  = var.listener
   instances = var.instances
 
   load_balancer_arn     = module.lb.this_lb_arn
