@@ -10,7 +10,7 @@ variable "instances" {
 
 variable "listener" {
   description = "A list of listener blocks"
-  type        = map(string)
+  type        = list(map(string))
 }
 
 variable "load_balancer_arn" {
