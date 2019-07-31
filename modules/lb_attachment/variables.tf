@@ -1,7 +1,11 @@
-variable "name" {
-  description = "The name of the ELB"
-  type        = string
-  default     = "test"
+variable "enable_proxy_protocol" {
+  type    = bool
+  default = true
+}
+
+variable "instances" {
+  type    = list
+  default = [""]
 }
 
 variable "load_balancer_arn" {
@@ -19,6 +23,17 @@ variable "listener_protocol" {
   default = ""
 }
 
+variable "name" {
+  description = "The name of the ELB"
+  type        = string
+  default     = "test"
+}
+
+variable "number_of_instances" {
+  type    = number
+  default = 1
+}
+
 variable "port" {
   type    = number
   default = 443
@@ -32,19 +47,4 @@ variable "protocol" {
 variable "vpc_id" {
   type    = string
   default = ""
-}
-
-variable "enable_proxy_protocol" {
-  type    = bool
-  default = true
-}
-
-variable "number_of_instances" {
-  type    = number
-  default = 1
-}
-
-variable "instances" {
-  type    = list
-  default = [""]
 }

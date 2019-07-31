@@ -1,8 +1,3 @@
-output "this_lb_id" {
-  description = "The name of the LB"
-  value       = concat(aws_lb.this.*.id, [""])[0]
-}
-
 output "this_lb_arn" {
   description = "The ARN of the LB"
   value       = concat(aws_lb.this.*.arn, [""])[0]
@@ -11,6 +6,11 @@ output "this_lb_arn" {
 output "this_lb_arn_suffix" {
   description = "The ARN of the LB"
   value       = concat(aws_lb.this.*.arn_suffix, [""])[0]
+}
+
+output "this_lb_id" {
+  description = "The name of the LB"
+  value       = concat(aws_lb.this.*.id, [""])[0]
 }
 
 output "this_lb_name" {
