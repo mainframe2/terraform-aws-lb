@@ -14,7 +14,7 @@ resource "aws_lb_target_group_attachment" "this" {
 }
 
 resource "aws_lb_listener" "this" {
-  count             = length(var.instance)
+  count             = length(var.listener)
   load_balancer_arn = var.load_balancer_arn
   port              = element(var.listener, count.index)["instance_port"]
   protocol          = element(var.listener, count.index)["instance_protocol"]
