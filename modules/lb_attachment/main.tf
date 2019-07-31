@@ -14,17 +14,6 @@ resource "aws_lb_target_group_attachment" "this" {
 }
 
 resource "aws_lb_listener" "this" {
-  load_balancer_arn = var.load_balancer_arn
-  port              = var.listener_port
-  protocol          = var.listener_protocol
-
-  default_action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.this.arn
-  }
-}
-
-resource "aws_lb_listener" "this" {
   dynamic "listener" {
     for_each = var.listener
     content {
