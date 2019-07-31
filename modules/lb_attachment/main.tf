@@ -10,7 +10,7 @@ resource "aws_lb_target_group" "this" {
   protocol = element(var.listener, count.index)["instance_protocol"]
 
   health_check {
-    interval            = 5
+    interval            = 10
     healthy_threshold   = 2
     unhealthy_threshold = 2
   }
