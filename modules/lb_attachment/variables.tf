@@ -8,17 +8,12 @@ variable "instances" {
   default = [""]
 }
 
+variable "listener" {
+  description = "A list of listener blocks"
+  type        = list(map(string))
+}
+
 variable "load_balancer_arn" {
-  type    = string
-  default = ""
-}
-
-variable "listener_port" {
-  type    = number
-  default = 443
-}
-
-variable "listener_protocol" {
   type    = string
   default = ""
 }
