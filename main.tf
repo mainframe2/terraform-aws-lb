@@ -26,18 +26,16 @@ module "lb" {
 # ELB attachment
 #################
 module "lb_attachment" {
+  count  = length(var.listener)
   source = "./modules/lb_attachment"
 
-  name = var.name
-
-  port     = var.port
-  protocol = var.protocol
+  name = element(var.listener, count.index)["name"]
 
   vpc_id = var.vpc_id
 
   number_of_instances = var.number_of_instances
 
-  listener  = var.listener
+  listener  = element(var.listener, count.index)
   instances = var.instances
 
   load_balancer_arn     = module.lb.this_lb_arn
