@@ -5,7 +5,7 @@ locals {
 
 resource "aws_lb_target_group" "this" {
   count    = local.total_count_listeners
-  name     = var.name
+  name     = "${var.name}-${count.index}"
   port     = element(var.listener, count.index)["instance_port"]
   protocol = element(var.listener, count.index)["instance_protocol"]
 
