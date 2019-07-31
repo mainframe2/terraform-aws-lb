@@ -1,6 +1,6 @@
 locals {
   total_count_attachments = var.number_of_instances * length(var.listener)
-  total_count_listeners = length(var.listener)
+  total_count_listeners   = length(var.listener)
 }
 
 resource "aws_lb_target_group" "this" {
@@ -27,6 +27,6 @@ resource "aws_lb_listener" "this" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.this.["${count.index}"].arn
+    target_group_arn = element(aws_lb_target_group.this.*.arn, count.index)
   }
 }
