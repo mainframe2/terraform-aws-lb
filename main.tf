@@ -33,13 +33,11 @@ module "lb_attachment" {
   port     = var.port
   protocol = var.protocol
 
-  listener_port     = var.listener_port
-  listener_protocol = var.listener_protocol
-
   vpc_id = var.vpc_id
 
   number_of_instances = var.number_of_instances
 
+  listener  = var.listener
   instances = var.instances
 
   load_balancer_arn     = module.lb.this_lb_arn

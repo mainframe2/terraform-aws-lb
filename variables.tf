@@ -26,8 +26,9 @@ variable "subnets" {
 }
 
 variable "tags" {
-  type    = map(string)
-  default = {}
+  description = "A mapping of tags to assign to the resource"
+  type        = map(string)
+  default     = {}
 }
 
 variable "enable_deletion_protection" {
@@ -78,4 +79,9 @@ variable "number_of_instances" {
 variable "instances" {
   type    = list
   default = [""]
+}
+
+variable "listener" {
+  description = "A list of listener blocks"
+  type        = list(map(string))
 }

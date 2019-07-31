@@ -23,3 +23,19 @@ resource "aws_lb_listener" "this" {
     target_group_arn = aws_lb_target_group.this.arn
   }
 }
+
+resource "aws_lb_listener" "this" {
+  dynamic "listener" {
+    for_each = var.listener
+    content {
+      load_balancer_arn = var.load_balancer_arn
+      port              = listener.value.instance_port
+      protocol          = listener.value.instance_protocol
+
+      default_action {
+        type             = "forward"
+        target_group_arn = aws_lb_target_group.this.arn
+      }
+    }
+  }
+}
