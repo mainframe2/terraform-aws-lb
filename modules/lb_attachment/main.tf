@@ -9,9 +9,8 @@ resource "aws_lb_target_group" "this" {
   port     = element(var.listener, count.index)["instance_port"]
   protocol = element(var.listener, count.index)["instance_protocol"]
 
-  health_check = {
+  health_check {
     interval            = 5
-    protocol            = "TCP"
     healthy_threshold   = 2
     unhealthy_threshold = 2
   }
