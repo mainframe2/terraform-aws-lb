@@ -11,7 +11,7 @@ resource "aws_lb_target_group" "this" {
 
   health_check = {
     interval            = 5
-    protocol            = TCP
+    protocol            = "TCP"
     healthy_threshold   = 2
     unhealthy_threshold = 2
   }
