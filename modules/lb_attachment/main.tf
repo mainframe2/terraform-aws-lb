@@ -9,9 +9,9 @@ resource "aws_lb_target_group" "this" {
 
 resource "aws_lb_target_group_attachment" "this" {
   count            = var.number_of_instances * length(var.listener)
-  target_group_arn = "aws_lb_target_group.this.${floor(count.index : length(var.instances))}.arn"
+  target_group_arn = "aws_lb_target_group.this.${floor((count.index : length(var.instances)))}.arn"
   target_id        = "${element(var.instances, count.index % length(var.instances))}"
-  port             = "${element(var.listener, floor(count.index : length(var.instances)))}"
+  port             = "${element(var.listener, floor((count.index : length(var.instances))))}"
 }
 
 resource "aws_lb_listener" "this" {
