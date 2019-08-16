@@ -5,7 +5,7 @@ Terraform AWS Network Load Balancer
 |------|-------------|:----:|:-----:|:-----:|
 | enable_deletion_protection | Enable/Disable deletion protection | bool | false | no |
 | enable_proxy_protocol | Enable/Disable Proxy Protocol | bool | true | no |
-| idle\_timeout | The time in seconds that the connection is allowed to be idle | number | `"60"` | no |
+| idle\_timeout | The time in seconds that the connection is allowed to be idle | number | `"3600"` | no |
 | instances | List of instances ID to place in the ELB pool | list(string) | `[]` | no |
 | internal | If true, ELB will be an internal ELB | string | n/a | yes |
 | listener | A list of listener blocks | list(map(string)) | n/a | yes |
