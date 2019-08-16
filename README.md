@@ -13,3 +13,8 @@ Terraform AWS Network Load Balancer
 | security\_groups | A list of security group IDs to assign to the ELB | list(string) | n/a | yes |
 | subnets | A list of subnet IDs to attach to the ELB | list(string) | n/a | yes |
 | vpc_id | ID of VPC where you want to deploy NLB | string | n/a | yes |
+
+
+## Authors
+
+Module managed by Frame Systems Team
