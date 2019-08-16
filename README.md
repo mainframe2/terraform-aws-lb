@@ -17,7 +17,7 @@ Terraform 0.12
 | enable_proxy_protocol | Enable/Disable Proxy Protocol | bool | true | no |
 | idle\_timeout | The time in seconds that the connection is allowed to be idle | number | `3600` | no |
 | instances | List of instances ID to place in the NLB pool | list(string) | `[]` | no |
-| internal | If true, NLB will be an internal NLB | string | n/a | yes |
+| internal | If true, NLB will be an internal NLB | string | true | yes |
 | name | The name of the NLB | string | `null` | yes |
 | number\_of\_instances | Number of instances to attach to NLB | number | `1` | no |
 | security\_groups | A list of security group IDs to assign to the NLB | list(string) | n/a | yes |
