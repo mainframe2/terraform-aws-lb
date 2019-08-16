@@ -1,5 +1,15 @@
-# terraform-aws-lb
-Terraform AWS Network Load Balancer
+# AWS Network Load Balancer (NLB) Terraform module
+
+Terraform module which creates NLB resources on AWS.
+
+Root module calls these modules which can also be used separately to create independent resources:
+
+* [lb](https://github.com/mainframe2/terraform-aws-lb/tree/master/modules/lb) - creates NLB
+* [lb_attachment](https://github.com/mainframe2/terraform-aws-lb/tree/master/modules/lb_attachment) - creates NLB attachments, target groups, etc.
+
+## Terraform versions
+
+Terraform 0.12
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
