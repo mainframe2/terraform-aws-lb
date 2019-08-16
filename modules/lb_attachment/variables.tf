@@ -21,7 +21,7 @@ variable "load_balancer_arn" {
 variable "name" {
   description = "The name of the ELB"
   type        = string
-  default     = "test"
+  default     = null
 }
 
 variable "number_of_instances" {
