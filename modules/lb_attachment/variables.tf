@@ -39,6 +39,11 @@ variable "protocol" {
   default = ""
 }
 
+variable "target_type" {
+  type    = string
+  default = "ip"
+}
+
 variable "vpc_id" {
   type    = string
   default = ""
