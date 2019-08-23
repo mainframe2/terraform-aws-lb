@@ -19,7 +19,7 @@ resource "aws_lb_target_group" "this" {
   }
 
   vpc_id            = var.vpc_id
-  proxy_protocol_v2 = var.enable_proxy_protocol
+  proxy_protocol_v2 = element(var.listener, count.index)["enable_proxy_protocol"]
 }
 
 resource "aws_lb_target_group_attachment" "this" {

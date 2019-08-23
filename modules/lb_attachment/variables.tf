@@ -1,8 +1,3 @@
-variable "enable_proxy_protocol" {
-  type    = bool
-  default = true
-}
-
 variable "instances" {
   type    = list
   default = [""]

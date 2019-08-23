@@ -37,6 +37,5 @@ module "lb_attachment" {
   listener  = var.listener
   instances = var.instances
 
-  load_balancer_arn     = module.lb.this_lb_arn
-  enable_proxy_protocol = var.enable_proxy_protocol
+  load_balancer_arn = module.lb.this_lb_arn
 }
