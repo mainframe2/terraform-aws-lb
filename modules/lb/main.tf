@@ -4,7 +4,7 @@ resource "aws_lb" "this" {
 
   internal           = var.internal
   load_balancer_type = "network"
-  subnets            = var.subnets
+  subnets            = var.internal ? var.subnets : null
 
   # TODO cross_zone_load_balancing  = var.cross_zone_load_balancing
   idle_timeout               = var.idle_timeout
