@@ -43,7 +43,7 @@ module "lb_attachment" {
 }
 
 resource "aws_eip" "this" {
-  count = var.internal ? null : length(var.subnets)
+  count = var.internal ? 0 : length(var.subnets)
   vpc   = true
 
   tags = merge(
