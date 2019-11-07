@@ -14,8 +14,7 @@ module "lb" {
   idle_timeout               = var.idle_timeout
   enable_deletion_protection = var.enable_deletion_protection
 
-  subnet_mapping = var.internal ? null : zipmap(var.subnets, aws_eip.this*.id)
-
+  subnet_mapping = var.internal ? null : zipmap(var.subnets, aws_eip.this[*].id)
 
   tags = merge(
     var.tags,
