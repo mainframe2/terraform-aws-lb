@@ -36,7 +36,7 @@ variable "subnets" {
 }
 
 variable "subnet_mapping" {
-  type = list(map(string))
+  type = map(string)
 }
 
 variable "tags" {
