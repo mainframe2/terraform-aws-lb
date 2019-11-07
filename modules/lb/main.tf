@@ -11,7 +11,7 @@ resource "aws_lb" "this" {
   enable_deletion_protection = var.enable_deletion_protection
 
   dynamic "subnet_mapping" {
-    for_each = var.internal ? [] : var.subnet_mapping
+    for_each = var.internal ? {} : var.subnet_mapping
     content {
       subnet_id     = subnet_mapping.key
       allocation_id = subnet_mapping.value
