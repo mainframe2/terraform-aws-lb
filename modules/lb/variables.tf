@@ -35,6 +35,10 @@ variable "subnets" {
   default = [""]
 }
 
+variable "subnet_mapping" {
+  type = list(map(string))
+}
+
 variable "tags" {
   type    = map(string)
   default = {}
