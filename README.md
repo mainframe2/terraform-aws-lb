@@ -11,6 +11,8 @@ Root module calls these modules which can also be used separately to create inde
 
 Terraform 0.12
 
+## Input Arguments
+
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | enable_deletion_protection | Enable/Disable deletion protection | bool | false | no |
@@ -24,6 +26,8 @@ Terraform 0.12
 | subnets | A list of subnet IDs to attach to the NLB | list(string) | n/a | yes |
 | vpc_id | ID of VPC where you want to deploy NLB | string | n/a | yes |
 
+## Output Attributes
+
 | Name | Description |
 |------|-------------|
 | this_lb_id | NLB AWS ID |
@@ -33,7 +37,6 @@ Terraform 0.12
 | this_lb_dns_name | AWS assigned DNS name |
 | this_lb_zone_id | ID of hosted zones |
 | this_lb_public_ip | NLB Public IP (EIP) - empty when internal/private |
-
 
 ## Authors
 
