@@ -24,6 +24,16 @@ Terraform 0.12
 | subnets | A list of subnet IDs to attach to the NLB | list(string) | n/a | yes |
 | vpc_id | ID of VPC where you want to deploy NLB | string | n/a | yes |
 
+| Name | Description |
+|------|-------------|
+| this_lb_id | NLB AWS ID |
+| this_lb_arn | NLB AWS ARN |
+| this_lb_arn_suffix | NLB ARN Suffix |
+| this_lb_name | The name of the load balancer |
+| this_lb_dns_name | AWS assigned DNS name |
+| this_lb_zone_id | ID of hosted zones |
+| this_lb_public_ip | NLB Public IP (EIP) - empty when internal/private |
+
 
 ## Authors
 
