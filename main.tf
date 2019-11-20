@@ -14,6 +14,8 @@ module "lb" {
   idle_timeout               = var.idle_timeout
   enable_deletion_protection = var.enable_deletion_protection
 
+  subnet_mapping = var.internal ? null : zipmap(var.subnets, aws_eip.this[*].id)
+
   tags = merge(
     var.tags,
     {
@@ -38,4 +40,16 @@ module "lb_attachment" {
   instances = var.instances
 
   load_balancer_arn = module.lb.this_lb_arn
+}
+
+resource "aws_eip" "this" {
+  count = var.internal ? 0 : length(var.subnets)
+  vpc   = true
+
+  tags = merge(
+    var.tags,
+    {
+      "Name" = format("%s", var.name)
+    },
+  )
 }
