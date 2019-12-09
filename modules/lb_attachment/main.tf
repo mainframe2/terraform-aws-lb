@@ -15,6 +15,7 @@ resource "aws_lb_target_group" "this" {
     interval            = 10
     healthy_threshold   = 2
     unhealthy_threshold = 2
+    port                = element(var.listener, count.index)["health_check_port"]
   }
 
   vpc_id            = var.vpc_id
