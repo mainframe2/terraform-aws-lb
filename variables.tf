@@ -1,7 +1,7 @@
 variable "name" {
   description = "The name of the ELB"
   type        = string
-  default     = "test"
+  default     = null
 }
 
 variable "name_prefix" {
@@ -64,11 +64,6 @@ variable "protocol" {
 variable "vpc_id" {
   type    = string
   default = ""
-}
-
-variable "enable_proxy_protocol" {
-  type    = bool
-  default = true
 }
 
 variable "number_of_instances" {

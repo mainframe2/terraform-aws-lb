@@ -1,8 +1,3 @@
-variable "enable_proxy_protocol" {
-  type    = bool
-  default = true
-}
-
 variable "instances" {
   type    = list
   default = [""]
@@ -21,7 +16,7 @@ variable "load_balancer_arn" {
 variable "name" {
   description = "The name of the ELB"
   type        = string
-  default     = "test"
+  default     = null
 }
 
 variable "number_of_instances" {
@@ -37,6 +32,11 @@ variable "port" {
 variable "protocol" {
   type    = string
   default = ""
+}
+
+variable "target_type" {
+  type    = string
+  default = "ip"
 }
 
 variable "vpc_id" {

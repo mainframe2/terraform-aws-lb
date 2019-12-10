@@ -27,3 +27,8 @@ output "this_lb_zone_id" {
   description = "The canonical hosted zone ID of the LB (to be used in a Route 53 Alias record)"
   value       = module.lb.this_lb_zone_id
 }
+
+output "this_lb_public_ip" {
+  description = "The canonical hosted zone ID of the LB (to be used in a Route 53 Alias record)"
+  value       = var.internal ? [] : aws_eip.this[*].public_ip
+}
