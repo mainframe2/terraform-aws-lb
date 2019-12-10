@@ -16,7 +16,7 @@ variable "internal" {
 variable "name" {
   description = "The name of the ELB"
   type        = string
-  default     = "test"
+  default     = null
 }
 
 variable "name_prefix" {
@@ -33,6 +33,10 @@ variable "security_groups" {
 variable "subnets" {
   type    = list(string)
   default = [""]
+}
+
+variable "subnet_mapping" {
+  type = map(string)
 }
 
 variable "tags" {

@@ -5,10 +5,11 @@ locals {
 }
 
 resource "aws_lb_target_group" "this" {
-  count    = local.listeners_total_count
-  name     = "${var.name}-${count.index}"
-  port     = element(var.listener, count.index)["instance_port"]
-  protocol = element(var.listener, count.index)["instance_protocol"]
+  count       = local.listeners_total_count
+  name        = "${var.name}-${count.index}"
+  port        = element(var.listener, count.index)["instance_port"]
+  protocol    = element(var.listener, count.index)["instance_protocol"]
+  target_type = var.target_type
 
   health_check {
     protocol            = "TCP"
@@ -18,7 +19,7 @@ resource "aws_lb_target_group" "this" {
   }
 
   vpc_id            = var.vpc_id
-  proxy_protocol_v2 = var.enable_proxy_protocol
+  proxy_protocol_v2 = element(var.listener, count.index)["enable_proxy_protocol"]
 }
 
 resource "aws_lb_target_group_attachment" "this" {
