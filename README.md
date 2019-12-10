@@ -40,4 +40,4 @@ Terraform 0.12
 
 ## Authors
 
-Module managed by Frame Systems Team
+Module managed by Stefan Mihajlovic
