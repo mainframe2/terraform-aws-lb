@@ -26,8 +26,8 @@ resource "aws_lb_target_group" "this" {
 resource "aws_lb_target_group_attachment" "this" {
   count            = local.attachments_total_count
   target_group_arn = element(aws_lb_target_group.this.*.arn, floor(count.index / local.total_instances))
-  target_id        = "${element(var.instances, count.index % local.total_instances)}"
-  port             = "${element(var.listener, floor(count.index / local.total_instances))["instance_port"]}"
+  target_id        = element(var.instances, count.index % local.total_instances)
+  port             = element(var.listener, floor(count.index / local.total_instances))["instance_port"]
 }
 
 resource "aws_lb_listener" "this" {
