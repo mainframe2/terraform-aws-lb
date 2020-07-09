@@ -25,11 +25,6 @@ variable "name_prefix" {
   default     = null
 }
 
-variable "security_groups" {
-  type    = list(string)
-  default = [""]
-}
-
 variable "subnets" {
   type    = list(string)
   default = [""]
