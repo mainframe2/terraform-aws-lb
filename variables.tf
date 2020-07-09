@@ -15,11 +15,6 @@ variable "internal" {
   default = true
 }
 
-variable "security_groups" {
-  type    = list(string)
-  default = [""]
-}
-
 variable "subnets" {
   type    = list(string)
   default = [""]
