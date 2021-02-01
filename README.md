@@ -39,4 +39,4 @@ Terraform 0.12
 
 ## Authors
 
-Module managed by Stefan Mihajlovic and Andrijana Ivic
+Module managed by Andrijana Ivic
